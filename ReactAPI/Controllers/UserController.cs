@@ -91,7 +91,7 @@ namespace ReactAPI.Controllers
                 return NotFound(new { isSuccess = false });
             }
 
-            if (user.Password != _utilities.encryptSHA256(deleteUser.Password))
+            if (user.Password != _utilities.encryptSHA256(deleteUser.Password!))
             {
                 return Unauthorized(new { isSuccess = false });
             }
